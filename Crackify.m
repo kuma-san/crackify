@@ -98,6 +98,11 @@
 	} else {
 		[[NSFileManager defaultManager] removeItemAtPath:@"/private/test_jail.txt" error:nil];
 	}
+	
+	//check if /bin/bash exists
+	if([[NSFileManager defaultManager] fileExistsAtPath:@"/bin/bash"]){
+		return YES;
+	}
 #endif
 	return NO;
 }
